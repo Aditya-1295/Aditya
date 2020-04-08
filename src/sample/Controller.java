@@ -19,8 +19,6 @@ public class Controller implements Initializable {
 
 
     public void showeditDialog(ActionEvent actionEvent) {
-
-
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.initOwner(anchorPane.getScene().getWindow());
         dialog.setTitle("Add new to do item");
@@ -39,6 +37,10 @@ public class Controller implements Initializable {
         dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
         dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
 
+        Question temporaryQuestion = new Question();
+        *(dialogcontroller)fxmlLoader.getController()).setQuestion(temporaryQuestion);
+
+
         Optional<ButtonType> result = dialog.showAndWait();
 
         if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -46,7 +48,7 @@ public class Controller implements Initializable {
 
 
 
-        }
+    }
 
 
 
@@ -58,18 +60,10 @@ public class Controller implements Initializable {
 
     }
 
-    private class Question{
-        String question;
-        String opt1;
-    }
 
     Stage currentStage;
     @FXML AnchorPane anchorPane;
     @FXML ListView listView;
-
-
-
-
 
 
 
