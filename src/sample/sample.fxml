@@ -1,0 +1,40 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ListView?>
+<AnchorPane fx:id="anchorPane" fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml" >
+    <children>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem text="create mcq question" onAction="#showeditDialog"/>
+
+
+                <MenuItem text="create subjective question" />
+
+
+            </Menu>
+        </MenuBar>
+
+
+
+        <ListView fx:id="listView" prefHeight="120000" prefWidth="800" layoutX="750" layoutY="200" />
+
+    </children>
+
+</AnchorPane>
+
+
+
+
+
+
