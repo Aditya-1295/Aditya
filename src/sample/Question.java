@@ -1,8 +1,8 @@
 package sample;
 
 public class Question {
-    private String question;
-    private String opt1,opt2,opt3,opt4;
+    private String question="";
+    private String opt1="",opt2="",opt3="",opt4="";
 
     public String getQuestion() {
         return question;

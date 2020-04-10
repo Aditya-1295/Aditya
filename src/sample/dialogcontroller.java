@@ -1,11 +1,20 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 
-public class dialogcontroller {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+
+public class dialogcontroller implements Initializable{
+
+    Question temporaryQuestion;
 
     @FXML
     public TextField editQuestion;
@@ -18,6 +27,8 @@ public class dialogcontroller {
     @FXML
     public TextField editopt4;
 
+    Stage currentStage;
+
     String question;
     String option1;
     String option2;
@@ -25,21 +36,31 @@ public class dialogcontroller {
     String option4;
 
 
-    public void processResult(){
-        question = editQuestion.getText().trim();
-        option1 = editopt1.getText().trim();
-        option2 = editopt2.getText().trim();
-        option3 = editopt3.getText().trim();
-        option4 = editopt4.getText().trim();
+    public void processResult(MouseEvent mouseEvent){
 
-        System.out.println(question);
-        System.out.println(option1);
-        System.out.println(option2);
-        System.out.println(question);
-        System.out.println(question);
-
-
+        temporaryQuestion.setQuestion(editQuestion.getText().trim());
+        temporaryQuestion.setOpt1(editopt1.getText());
+        temporaryQuestion.setOpt2(editopt2.getText());
+        temporaryQuestion.setOpt3(editopt3.getText());
+        temporaryQuestion.setOpt4(editopt4.getText());
+        currentStage.close();
 
     }
 
+    public void setQuestion(Question temporaryQuestion) {
+        this.temporaryQuestion = temporaryQuestion;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Platform.runLater(()->{
+            editQuestion.setText(temporaryQuestion.getQuestion());
+            editopt1.setText(temporaryQuestion.getOpt1());
+            editopt2.setText(temporaryQuestion.getOpt2());
+            editopt3.setText(temporaryQuestion.getOpt3());
+            editopt4.setText(temporaryQuestion.getOpt4());
+
+        });
+
+    }
 }

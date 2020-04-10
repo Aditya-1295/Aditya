@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.sun.javafx.scene.control.IntegerField?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="sample.remove"
+          prefHeight="400.0" prefWidth="600.0">
+
+    <Label text="Enter The question number you want to delete" GridPane.rowIndex="0" />
+    <IntegerField fx:id="getQuestionNumber" GridPane.rowIndex="1"/>
+
+    <Button layoutX="250" layoutY="234" />
+
+
+
+
+</GridPane>
